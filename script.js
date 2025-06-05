@@ -33,7 +33,7 @@ async function loadManifest() {
 
 // Recursively build a nested <ul> / <li> tree from the manifest object.
 // If value is a string → treat as leaf (path to JSON file).
-function buildTree(obj, container, path = []) {
+function buildTree(obj, container) {
     const ul = document.createElement("ul");
     Object.entries(obj).forEach(([key, value]) => {
       const li = document.createElement("li");
@@ -42,8 +42,7 @@ function buildTree(obj, container, path = []) {
         li.classList.add("leaf");
         li.addEventListener("click", (e) => {
           e.stopPropagation();
-          // Pass the full path to loadFlashcards
-          loadFlashcards(value, [...path, key].join(" > "));
+          loadFlashcards(value, key); // pass key (display name)
         });
       } else {
         li.addEventListener("click", (e) => {
@@ -51,8 +50,7 @@ function buildTree(obj, container, path = []) {
           const isExpanded = li.classList.toggle("expanded");
           li.querySelector("ul").style.display = isExpanded ? "block" : "none";
         });
-        // Pass the current path to child nodes
-        buildTree(value, li, [...path, key]);
+        buildTree(value, li);
       }
       ul.appendChild(li);
     });
@@ -60,7 +58,7 @@ function buildTree(obj, container, path = []) {
   }
 
 // Fetch a single set (JSON array), shuffle it, and start the quiz.
-async function loadFlashcards(path, fullPath) {
+async function loadFlashcards(path, setName) {
     try {
       const resp = await fetch(`sets/${path}`);
       if (!resp.ok) throw new Error(`Could not load ${path}`);
@@ -70,7 +68,7 @@ async function loadFlashcards(path, fullPath) {
       currentIndex = 0;
   
       // Show title and UI
-      document.getElementById("set-title").textContent = fullPath;
+      document.getElementById("set-title").textContent = setName;
       showFlashcardUI();
       renderCard();
     } catch (err) {
