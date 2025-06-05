@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Define the enhanced greenhouse effect and explain how it differs from the natural greenhouse effect.",
+    "answer": "The enhanced greenhouse effect is additional warming caused by increased greenhouse gas emissions from human activities, whereas the natural greenhouse effect is the trapping of heat by atmospheric gases at pre-industrial levels."
+  },
+  {
+    "question": "List three primary greenhouse gases and the main human activity responsible for each.",
+    "answer": "Carbon dioxide from fossil fuel combustion, methane from livestock and rice cultivation, and nitrous oxide from fertiliser application."
+  },
+  {
+    "question": "Explain one piece of evidence that supports contemporary global warming.",
+    "answer": "Instrumental records show a steady rise in global average surface temperature of about 1°C since the late 19th century, based on meteorological station data and satellite measurements."
+  },
+  {
+    "question": "Describe one impact of sea-level rise on coastal communities.",
+    "answer": "Sea-level rise increases coastal erosion and flood risk, leading to property damage, displacement of populations, and loss of land."
+  },
+  {
+    "question": "What is carbon sequestration and how does it help mitigate climate change?",
+    "answer": "Carbon sequestration is the process of capturing and storing CO₂—either in plants, soils, or underground reservoirs—to reduce atmospheric CO₂ levels and slow global warming."
+  },
+  {
+    "question": "Explain the difference between mitigation and adaptation strategies in climate change management.",
+    "answer": "Mitigation aims to reduce greenhouse gas emissions or enhance sinks, while adaptation focuses on adjusting to current or expected climate impacts to minimise harm."
+  },
+  {
+    "question": "Give two examples of how renewable energy can reduce carbon footprints.",
+    "answer": "Solar panels and wind turbines produce electricity without burning fossil fuels, thereby reducing CO₂ emissions per unit of energy generated."
+  },
+  {
+    "question": "What was the main objective of the Paris Agreement (2015)?",
+    "answer": "To limit global temperature rise to well below 2°C above pre-industrial levels and pursue efforts to keep it below 1.5°C by reducing emissions."
+  },
+  {
+    "question": "Define climate refugee and provide one reason why their numbers might increase.",
+    "answer": "A climate refugee is someone forced to leave home due to climate-related factors (e.g., sea-level rise, extreme drought). Numbers may increase as weather patterns become more severe and frequent."
+  },
+  {
+    "question": "Describe two socio-economic impacts of frequent extreme weather events in developing countries.",
+    "answer": "They destroy infrastructure (homes, roads) and reduce agricultural productivity, leading to food insecurity, poverty, and slowed economic growth."
+  },
+  {
+    "question": "Explain how the El Niño phenomenon influences global weather patterns.",
+    "answer": "El Niño is a periodic warming of central/eastern Pacific, altering atmospheric circulation, causing wetter conditions in some regions (e.g., Peru) and droughts in others (e.g., Australia)."
+  },
+  {
+    "question": "What causes acid rain and what is one ecological consequence?",
+    "answer": "Acid rain is caused by SO₂ and NOₓ emissions reacting with water vapour to form sulfuric and nitric acids. It harms aquatic ecosystems by acidifying lakes, killing fish."
+  },
+  {
+    "question": "Outline two human activities that contribute to water pollution.",
+    "answer": "Agricultural runoff carrying fertilisers and pesticides, and untreated industrial waste discharged into rivers or lakes."
+  },
+  {
+    "question": "Describe eutrophication and its main effect on freshwater ecosystems.",
+    "answer": "Eutrophication is nutrient enrichment (usually N and P) leading to excessive algae growth. When algae die, their decomposition depletes oxygen, causing fish kills."
+  },
+  {
+    "question": "Explain one method of reducing plastic pollution in marine environments.",
+    "answer": "Implementing a deposit-return scheme for plastic bottles encourages recycling, reducing the amount of plastic entering oceans."
+  },
+  {
+    "question": "Define point-source pollution and provide one real-world example.",
+    "answer": "Point-source pollution originates from a single, identifiable source. Example: wastewater discharge pipe from a sewage treatment plant into a river."
+  },
+  {
+    "question": "How does particulate matter (PM2.5) affect human health?",
+    "answer": "PM2.5 particles penetrate deep into the respiratory system, causing respiratory illnesses, cardiovascular problems, and increased mortality rates."
+  },
+  {
+    "question": "What is the role of a catalytic converter in reducing air pollution from vehicles?",
+    "answer": "Catalytic converters convert harmful exhaust gases (CO, NOₓ, hydrocarbons) into less harmful substances (CO₂, N₂, H₂O) through chemical reactions."
+  },
+  {
+    "question": "Describe one policy a government can implement to control industrial air pollution.",
+    "answer": "Introduce emission standards that set maximum allowable levels of SO₂ and NOₓ from factories, enforced through fines for non-compliance."
+  },
+  {
+    "question": "Explain the concept of sustainable development as defined by the Brundtland Report (1987).",
+    "answer": "Development that meets present needs without compromising the ability of future generations to meet their own needs, balancing economic, social, and environmental factors."
+  },
+  {
+    "question": "Give one example of an ecosystem-based adaptation strategy.",
+    "answer": "Restoring mangrove forests along coastlines provides storm protection, reduces erosion, and supports biodiversity, helping communities adapt to rising sea levels."
+  },
+  {
+    "question": "What is a carbon footprint, and which two daily activities significantly contribute to an individual’s footprint?",
+    "answer": "A carbon footprint is the total CO₂ emissions caused by an individual, event, or product. Two major contributors are air travel and driving petrol/diesel vehicles."
+  },
+  {
+    "question": "Explain how urban heat islands form and one way cities can mitigate this effect.",
+    "answer": "Urban heat islands form when concrete and asphalt absorb heat, raising local temperatures. Planting green roofs and increasing urban vegetation help cool the area."
+  },
+  {
+    "question": "Describe how climate models are used to predict future climate scenarios.",
+    "answer": "Climate models use mathematical equations to simulate atmospheric, oceanic, and land processes. By inputting emission projections, they estimate future temperature and precipitation changes."
+  },
+  {
+    "question": "Explain two limitations of climate models in forecasting regional climate changes.",
+    "answer": "Models have coarse spatial resolution, making local projections less precise, and uncertainties in future emission scenarios affect the reliability of results."
+  }
+]
