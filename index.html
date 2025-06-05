@@ -1,0 +1,37 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flashcards</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="set-selector" class="selector-container">
+      <h2>Flashcard Sets</h2>
+      <div id="tree-root"></div>
+    </aside>
+    <!-- Inside <main id="flashcard-container" ...>, replace its contents with: -->
+    <main id="flashcard-container" class="flashcard-container" style="display: none;">
+        <!-- New header: back‐button + set title -->
+        <div class="flashcard-header">
+        <button id="back-btn">← Back</button>
+        <h2 id="set-title"></h2>
+        </div>
+    
+        <div id="card-wrapper">
+        <div id="card" class="card">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        </div>
+    
+        <button id="next-btn" disabled>Next</button>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

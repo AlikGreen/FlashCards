@@ -1,0 +1,275 @@
+/* styles.css */
+:root {
+  --bg-color: #1a1a1a; /* Slightly lighter dark background */
+  --surface-color: #2c2c2c; /* For elements like cards, sidebar */
+  --primary-text-color: #e0e0e0;
+  --secondary-text-color: #b0b0b0;
+  --accent-color: #007bff; /* A vibrant blue for accents */
+  --accent-hover-color: #0056b3;
+  --border-color: #444;
+  --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  --font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* ---------- Global & Layout ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--primary-text-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.6;
+}
+
+#app {
+  display: flex;
+  width: 95%; /* Slightly wider */
+  max-width: 1200px; /* Increased max-width */
+  height: 90vh;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px; /* More rounded corners */
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ---------- Sidebar (Set Selector) ---------- */
+.selector-container {
+  width: 280px; /* Slightly wider sidebar */
+  background-color: var(--surface-color);
+  border-right: 1px solid var(--border-color);
+  padding: 25px;
+  overflow-y: auto;
+}
+
+.selector-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.4rem; /* Larger title */
+  font-weight: 600;
+  text-align: center;
+  color: var(--primary-text-color);
+}
+
+.selector-container ul {
+  list-style: none;
+  padding-left: 0; /* Remove default padding */
+}
+
+.selector-container li {
+  cursor: pointer;
+  margin: 8px 0;
+  padding: 8px 12px;
+  position: relative;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+  color: var(--secondary-text-color);
+}
+
+.selector-container li:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--primary-text-color);
+}
+
+.selector-container li.active-set-item {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+.selector-container li.active-set-item:hover {
+  background-color: var(--accent-hover-color);
+}
+
+.selector-container li::before {
+  content: "▶";
+  position: absolute;
+  left: 10px; /* Adjusted for padding */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--secondary-text-color);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.selector-container li:hover::before {
+  color: var(--primary-text-color);
+}
+
+.selector-container li.active-set-item::before {
+ color: #fff;
+}
+
+/* When sublist is visible, rotate arrow */
+.selector-container li.expanded::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* Hide arrow for leaf nodes */
+.selector-container li.leaf::before {
+  content: ""; /* Keep it empty, or use a different indicator like a dot */
+}
+
+.selector-container li.leaf {
+    padding-left: 28px; /* Indent leaf nodes slightly more */
+}
+
+/* Children list hidden by default */
+.selector-container ul ul {
+  display: none;
+  padding-left: 15px; /* Indent sub-lists */
+  margin-top: 5px;
+}
+
+/* ---------- Flashcard Area ---------- */
+.flashcard-container {
+  flex: 1;
+  background-color: var(--bg-color); /* Match body background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Pushes next button to bottom */
+  gap: 20px;
+  padding: 30px;
+}
+
+/* Wrapper to keep button separate from card */
+#card-wrapper {
+  perspective: 1500px; /* Enhanced perspective */
+  display: flex; /* Added to help center card if it's the only child */
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; /* Allows card wrapper to take available space */
+  width: 100%;
+}
+
+.card {
+  width: 380px; /* Larger card */
+  height: 240px;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother flip */
+}
+
+/* Card faces */
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px; /* More rounded */
+  backface-visibility: hidden;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.2rem; /* Slightly larger text */
+  text-align: center;
+  line-height: 1.5;
+  border: 1px solid var(--border-color);
+}
+
+.card .front {
+  background-color: var(--surface-color);
+  color: var(--primary-text-color);
+}
+
+.card .back {
+  background-color: lighten(var(--surface-color), 5%); /* Slightly lighter back */
+  color: var(--primary-text-color);
+  transform: rotateY(180deg);
+}
+
+/* Flipped state */
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* ---------- Buttons & Header ---------- */
+.flashcard-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px; /* Keep some space */
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#back-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--secondary-text-color);
+  font-size: 1.5rem; /* Larger icon */
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+#back-btn:hover {
+  color: var(--primary-text-color);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#set-title {
+  font-size: 1.6rem; /* Larger set title */
+  font-weight: 600;
+  color: var(--primary-text-color);
+}
+
+#next-btn {
+  background-color: var(--accent-color);
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  align-self: center; /* Center button if flashcard-container is flex */
+  margin-top: 20px; /* Ensure space from card */
+}
+
+#next-btn:hover:not(:disabled) {
+  background-color: var(--accent-hover-color);
+  transform: translateY(-1px);
+}
+
+#next-btn:active:not(:disabled) {
+  transform: translateY(0px);
+}
+
+#next-btn:disabled {
+  background-color: var(--border-color);
+  color: var(--secondary-text-color);
+  opacity: 0.7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
